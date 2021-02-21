@@ -40,6 +40,18 @@ function Search() {
     
   };
 
+  function addBook(key, title, authors, description, image, link) {
+    API.saveBook({
+    key: key,
+    title: title,
+    authors: authors,
+    description: description,
+    image: image, 
+    link: link,
+    }
+    ).catch(err => console.log(err)); 
+  }
+
     return (
       <Container fluid>
         <Row>
@@ -103,7 +115,7 @@ function Search() {
                       link = ""
                   }
                   return(
-                  <ListItem key={book.id}>
+                  <ListItem key={id}>
                     
                       <strong>
                         {title} by {authors}
@@ -112,6 +124,7 @@ function Search() {
                       <p>{description}</p>
                       <img src={image}></img>
                       {link}
+                      <button onClick={() => addBook(id, title, authors, description, image, link)}>This book slaps</button>
                     
                     {/* <DeleteBtn onClick={() => deleteBook(book._id)} /> */}
                   </ListItem>
