@@ -123,8 +123,8 @@ function Search() {
                       <h3>Description</h3>
                       <p>{description}</p>
                       <img src={image}></img>
-                      {link}
-                      <button onClick={() => addBook(id, title, authors, description, image, link)}>This book slaps</button>
+                      <a className="btn btn-primary" href={link}> View </a>
+                      <a className="btn btn-primary" onClick={() => addBook(id, title, authors, description, image, link)}>This book slaps</a>
                     
                     {/* <DeleteBtn onClick={() => deleteBook(book._id)} /> */}
                   </ListItem>

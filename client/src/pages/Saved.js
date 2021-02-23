@@ -48,8 +48,8 @@ function deleteBook(id) {
                     <h3>Description</h3>
                     <p>{book.description}</p>
                     <img src={book.image}></img>
-                    {book.link}
-                    <button onClick={() => deleteBook(book._id)}>This book slaps</button>
+                    <a className="btn btn-primary" href={book.link}> View </a>
+                    <button className="btn btn-primary" onClick={() => deleteBook(book._id)}>Delete</button>
                   
                   {/* <DeleteBtn onClick={() => deleteBook(book._id)} /> */}
                 </ListItem>
